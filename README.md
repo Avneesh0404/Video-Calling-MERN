@@ -37,13 +37,11 @@ npm install
 Create .env in your client directory:
 
 ```env
-Copy code
 REACT_APP_SOCKET_URL=http://localhost:8000
 ```
 Replace with your deployed signaling server URL in production.
 
 ###3️⃣ Start the app
 ```bash
-Copy code
 npm start
 ```
