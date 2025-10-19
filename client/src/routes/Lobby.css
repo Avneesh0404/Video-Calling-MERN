@@ -1,0 +1,176 @@
+:root{
+  --bg: #ffffff;
+  --panel-bg: #fffaf6;
+  --orange-50: #fff6ef;
+  --orange-100: #ffe7d0;
+  --orange-300: #ffb07a;
+  --orange-500: #ff7a18;
+  --orange-700: #e65d00;
+  --muted: #6b4b2a;
+  --shadow: rgba(230,110,30,0.12);
+  --border: rgba(230,110,30,0.12);
+  --radius: 10px;
+  --font: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%; margin:0; background:var(--bg); font-family:var(--font); color:var(--muted)}
+
+.lobby-container{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  padding:32px;
+  background:
+    radial-gradient(800px 300px at -10% 10%, rgba(255,122,24,0.06), transparent 20%),
+    radial-gradient(600px 240px at 110% 90%, rgba(255,122,24,0.04), transparent 20%),
+    var(--bg);
+}
+
+/* Title */
+.app-title{
+  font-size:34px;
+  margin:0;
+  color:var(--orange-700);
+  letter-spacing:0.4px;
+  background: linear-gradient(90deg, var(--orange-500), var(--orange-300));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight:700;
+  text-align:center;
+}
+
+/* Cards */
+.lobby-card{
+  width:360px;
+  background:var(--panel-bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow: 0 8px 24px var(--shadow);
+  text-align:left;
+  transition:transform .18s ease, box-shadow .18s ease;
+  backdrop-filter: blur(6px);
+}
+
+.lobby-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(230,110,30,0.14);
+}
+
+.card-title{
+  margin:0 0 6px 0;
+  font-size:18px;
+  color:var(--orange-700);
+  font-weight:700;
+}
+
+.card-sub{
+  margin:0 0 14px 0;
+  color:#7a5233;
+  font-size:14px;
+  line-height:1.35;
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:8px;
+  border:1px solid transparent;
+  background:#fff;
+  color:var(--orange-700);
+  cursor:pointer;
+  font-weight:600;
+  transition:transform .12s ease, box-shadow .12s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.btn:active{ transform: translateY(1px); }
+
+.btn-primary{
+  background: linear-gradient(180deg,var(--orange-500),var(--orange-700));
+  color:#fff;
+  border:none;
+  box-shadow: 0 8px 20px rgba(255,122,24,0.18);
+}
+
+.btn-primary:hover{
+  filter:brightness(0.98);
+  transform: translateY(-2px);
+}
+
+/* Inputs */
+.input, input[type="text"]{
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid rgba(107,75,42,0.12);
+  background:var(--orange-50);
+  outline:none;
+  font-size:14px;
+  color:var(--muted);
+}
+
+.input:focus, input[type="text"]:focus{
+  border-color:var(--orange-500);
+  box-shadow:0 6px 18px rgba(255,122,24,0.08);
+}
+
+/* New layout classes to replace inline styles */
+.control-row{
+  display:flex;
+  gap:8px;
+  margin-top:8px;
+}
+
+.meeting-info{
+  margin-top:12px;
+  font-size:13px;
+  color:#7a5233;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.meeting-link a{
+  color:var(--orange-700);
+  text-decoration:underline;
+  word-break:break-all;
+}
+
+.copy-msg{
+  margin-top:6px;
+  color:var(--orange-500);
+  font-weight:600;
+  font-size:13px;
+}
+
+/* Join form layout */
+.join-form{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-top:8px;
+}
+
+.form-actions{
+  display:flex;
+  gap:8px;
+}
+
+.error-msg{
+  color:var(--orange-700);
+  font-size:13px;
+  margin-top:4px;
+}
+
+/* Responsive */
+@media (max-width:420px){
+  .lobby-card{ width:100%; padding:16px; border-radius:12px }
+  .app-title{ font-size:28px }
+}
