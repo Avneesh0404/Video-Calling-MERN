@@ -17,10 +17,10 @@ Supports **multiple peers**, **video/audio tracks**, **screen sharing**, and **r
 
 ## ⚙️ Tech Stack
 
-- **React (Vite or CRA)**  
+- **React**  
 - **Socket.IO Client** for signaling  
 - **WebRTC API** (RTCPeerConnection, MediaStream)  
-- **TailwindCSS** or CSS modules for responsive UI  
+-  SS modules for responsive UI  
 
 ---
 
